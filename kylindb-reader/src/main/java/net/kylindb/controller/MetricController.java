@@ -85,7 +85,6 @@ public class MetricController {
 			} catch (ParseException e) {
 				throw new IllegalArgumentException("invalid startTime or endTime.should be yyyy/MM/dd");
 			}
-			
 			// 最多10秒超时
 			List<DataPoint> dataList = reader.queryMetricData(pointIdList, startTimestamp, endTimestamp, withNotes).addErrback((Exception e) ->{
 				LOG.error("queryMetricData fail.", e);
